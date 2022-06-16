@@ -40,16 +40,16 @@ Usamos tipos (classes) para representar os nós da árvores binária.
 classDiagram
     class Nó {
       << abstrato >>
-      ~ eval() Inteiro
-      ~ tamanho() Inteiro
-      ~ prefixo() Texto
-      ~ infixo() Texto
-      ~ posfixo() Texto
+      ~eval() Inteiro
+      ~tamanho() Inteiro
+      ~prefixo() Texto
+      ~infixo() Texto
+      ~posfixo() Texto
     }
     
     class Operaçao {
       << abstrato >>
-      ~ simbolo() Texto
+      ~simbolo() Texto
       tamanho() Inteiro
       prefixo() Texto
       infixo() Texto
