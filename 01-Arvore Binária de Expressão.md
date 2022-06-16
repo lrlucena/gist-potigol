@@ -1,22 +1,38 @@
 # Árvore Binária de Expressão
 
-```mermaid
-stateDiagram-v2
-   direction LR
-   1 --> 2
-   2 --> +
-   + --> 3
-   3 --> *
+Construção de uma árvore binária para representar expressões aritmética envolvendo números inteiros e os operadores binários +, -, *, /.
+
+O programa lê uma expressão aritmética escrita em notação polonesa e gera uma árvore binária para representá-la. Depois cálcula o valor da expressão e reescreve a expressão na notação prefixa e infixa.
+
+## Entrada
+
+```cmd
+1 2 3 * +
 ```
+
+## Armazenamento
 
 ```mermaid
 flowchart TB
-  + --> 2
+  + --> 1
   + --> *
-  * --> 1
-  * --> 4
-
+  * --> 2
+  * --> 3
 ```
+
+## Saída
+
+```cmd
+Soma(Valor(1),Multiplicação(Valor(2),Valor(3)))
+Infixo : (1 + (2 * 3))
+Prefixo: + 1 * 2 3
+Posfixo: 1 2 3 * +
+Eval   : 7
+```
+
+## Implemenação
+
+Usamos tipos (classes) para representar os nós da árvores binária.
 
 ```mermaid
 classDiagram
@@ -32,6 +48,7 @@ classDiagram
     class Operaçao {
       << abstrato >>
       ~ simbolo() Texto
+      tamanho() Inteiro
       prefixo() Texto
       infixo() Texto
       posfixo() Texto
@@ -82,7 +99,8 @@ classDiagram
 
 ```
 
-```scala
+
+```ruby
 tipo abstrato Nó
   eval(): Inteiro
   tamanho(): Inteiro
@@ -130,7 +148,11 @@ tipo Divisão: Operação
   símbolo = "/"
   eval() = esquerda.eval div direita.eval
 fim
+```
 
+A função recursiva `árvore` recebe uma pilha de tokens (números e símbolos) de uma expressão arimética em notação reversa e gera uma árvore binária cujos nós são os elementos da expressão.
+
+```ruby
 arvore(pilha: Lista[Texto]): Nó =
   se ["+", "-", "*", "/"].contem(pilha.cabeça) então
     operação = escolha pilha.cabeça
