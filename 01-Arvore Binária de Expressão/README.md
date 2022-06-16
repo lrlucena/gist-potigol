@@ -152,7 +152,7 @@ tipo Divisão: Operação
 fim
 ```
 
-A função recursiva `árvore` recebe uma pilha de tokens (números e símbolos) de uma expressão arimética em notação reversa e gera uma árvore binária cujos nós são os elementos da expressão.
+A função recursiva `árvore` recebe uma pilha de tokens (números e símbolos) de uma expressão aritmética em notação reversa e gera uma árvore binária cujos nós são os elementos da expressão.
 
 ```ruby
 arvore(pilha: Lista[Texto]): Nó =
