@@ -10,7 +10,7 @@ O programa lê uma expressão aritmética escrita em notação polonesa e gera u
 1 2 3 * +
 ```
 
-## Armazenamento
+## Árvore
 
 ```mermaid
 flowchart TB
