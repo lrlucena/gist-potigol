@@ -32,7 +32,7 @@ Posfixo: 1 2 3 * +
 Eval   : 7
 ```
 
-## Implemenação
+## Implementação
 
 Usamos tipos (classes) para representar os nós da árvores binária.
 
