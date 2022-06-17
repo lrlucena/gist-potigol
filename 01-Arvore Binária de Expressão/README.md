@@ -56,33 +56,37 @@ classDiagram
       posfixo() Texto
     }
     
-    Nó <-- Operaçao : esquerda
+    Nó <-- Operaçao : ~esquerda
     Nó <|.. Operaçao
-    Nó <-- Operaçao : direita
+    Nó <-- Operaçao : ~direita
         
     Nó <|.. Valor
     
     class Soma {
+      esquerda : Nó
+      direita : Nó
       símbolo = "+"
-      Soma(Nó, Nó)
       eval() Inteiro
     }
     
     class Subtraçao {
+      esquerda : Nó
+      direita : Nó
       símbolo = "-"
-      Subtraçao(Nó, Nó)
       eval() Inteiro
     }
     
     class Multiplicaçao {
+      esquerda : Nó
+      direita : Nó
       símbolo = "*"
-      Multiplicaçao(Nó, Nó)
       eval() Inteiro
     }
 
     class Divisao {
+      esquerda : Nó
+      direita : Nó
       símbolo = "/"
-      Divisao(Nó, Nó)
       eval() Inteiro
     }
     
@@ -92,8 +96,8 @@ classDiagram
     Operaçao <|.. Divisao
     
     class Valor {
-      Inteiro tamanho = 1
-      Valor(Inteiro)
+      tamanho = 1
+      eval : Inteiro
       prefixo() Texto
       infixo() Texto
       posfixo() Texto
