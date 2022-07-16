@@ -45,18 +45,7 @@ tipo Folha: No
   infixa, prefixa, posfixa: Lista[Valor] = []
 fim
 
-var arvore: No := Folha()
-a = leia_textos(" ")
-escolha a[1]
-  caso "I" => arvore := arvore.inserir(a[2][1])
-  caso "P" => valor = a[2][1]
-              se arvore.pesquisar(valor) então
-                escreva "{valor} existe"
-              senão
-                escreva "{valor} nao existe"
-              fim
-  caso "INFIXA"  => escreva arvore.infixa.junte(" ")
-  caso "POSFIXA" => escreva arvore.posfixa.junte(" ")
-  caso "PREFIXA" => escreva arvore.prefixa.junte(" ")
-  caso _         =>
-fim
+arvore = Folha().inserir('f').inserir('a').inserir('g').inserir('h')
+escreva arvore.infixa.junte(" ")
+arvore.posfixa.junte(" ")
+arvore.prefixa.junte(" ")
