@@ -1,0 +1,15 @@
+tipo Matriz = Lista[Lista[Inteiro]]
+
+transposta(matriz: Matriz): Matriz =
+  se matriz.cabeça == [] entao
+    []
+  senao
+    matriz.mapeie(_.cabeça) :: transposta(matriz.mapeie(_.cauda))
+  fim
+  
+
+m  = [[1, 2, 3], [4, 5, 6]]
+mt = transposta(m)
+
+escreva m.junte("\n")
+escreva mt.junte("\n")
